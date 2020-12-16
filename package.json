@@ -3,16 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "dev": "vue-cli-service serve --mode development",
+    "routes": "vue-cli-service routes"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "element-plus": "^1.0.1-beta.5",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
+    "qs": "^6.9.4",
     "vue": "^3.0.0",
+    "vue-cli-plugin-umijs": "../vue-cli-plugin-umijs",
     "vue-router": "^4.0.1",
     "vuex": "^4.0.0-0"
   },
@@ -31,6 +35,7 @@
     "eslint-plugin-vue": "^7.0.0-0",
     "node-sass": "^4.12.0",
     "prettier": "^1.19.1",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
   }
 }
