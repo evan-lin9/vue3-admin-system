@@ -5,18 +5,18 @@
   "scripts": {
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "dev": "vue-cli-service serve --mode development",
+    "dev": "vue-cli-service serve",
     "routes": "vue-cli-service routes"
   },
   "dependencies": {
+    "ant-design-vue": "^2.0.0-rc.5",
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
-    "element-plus": "^1.0.1-beta.5",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "qs": "^6.9.4",
     "vue": "^3.0.0",
-    "vue-cli-plugin-umijs": "../vue-cli-plugin-umijs",
+    "vue-cli-plugin-primary": "../vue-cli-plugin-primary",
     "vue-router": "^4.0.1",
     "vuex": "^4.0.0-0"
   },
@@ -29,7 +29,7 @@
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
-    "babel-plugin-component": "^1.1.1",
+    "babel-plugin-import": "^1.13.3",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-vue": "^7.0.0-0",

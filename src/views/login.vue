@@ -32,7 +32,6 @@
             />
           </div>
           <button @click="onSubmit" class="button" type="button">SUBMIT</button>
-          <p>返回的token 是：{{ token }}</p>
         </form>
       </div>
     </div>
@@ -40,8 +39,9 @@
 </template>
 
 <script>
-import { reactive, ref } from "vue";
-import { login } from "@/api";
+import { reactive } from "vue";
+import store from '@/store'
+import router from '@/router'
 
 export default {
   name: "Login",
@@ -50,13 +50,12 @@ export default {
       username: "ygstudying@qq.com",
       password: 123456
     });
-    const token = ref("");
     const onSubmit = async () => {
-      token.value = await login(payload);
+      await store.dispatch('login', payload)
+      await router.push('/')
     };
     return {
       payload,
-      token,
       onSubmit
     };
   }

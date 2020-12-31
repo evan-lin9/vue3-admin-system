@@ -1,24 +1,22 @@
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { createRouter, createWebHashHistory } from "vue-router";
-import Home from "../views/Home.vue";
-import { sleep } from "@/utils";
-import { readFileSync } from 'fs'
+import Dashboard from "../views/dashboard.vue";
+import { sleep, getToken } from "@/utils";
+import generateRoutes from './routes'
 
-const source = readFileSync('views/biz-officer/pages/officer-category/index.vue')
-console.log(source)
-
-const routes = [
+export const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home
+    name: "Dashboard",
+    component: Dashboard
   },
   {
     path: "/login",
     name: "Login",
-    component: () => import("../views/Login")
-  }
+    component: () => import("../views/login")
+  },
+  ...generateRoutes
 ];
 
 const router = createRouter({
@@ -28,7 +26,19 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
   NProgress.start();
-  await sleep(500).then(() => next());
+  if (getToken()) {
+    if (to.path === '/login') {
+      next({ path: '/' })
+      NProgress.done()
+    }
+  } else {
+    if (to.path === '/login') {
+      await sleep(500).then(() => next());
+    } else {
+      next(`/login?redirect=${to.path}`);
+      NProgress.done()
+    }
+  }
 });
 
 router.afterEach(() => {
