@@ -1,5 +1,6 @@
-import { createStore } from "vuex";
+import { createStore, createLogger } from "vuex";
 import { login, getUserInfo } from "@/api";
+import router from '@/router'
 
 export default createStore({
   state: {
@@ -16,7 +17,7 @@ export default createStore({
   },
   actions: {
     login({ commit, dispatch }, payload) {
-      login(payload).then(res => {
+      return login(payload).then(res => {
         const { token } = res
         // save token & get user info
         commit('SET_TOKEN', token)
@@ -24,11 +25,12 @@ export default createStore({
       })
     },
     fetchUserInfoByToken({ commit }, token) {
-      getUserInfo(token).then(res => {
+     return getUserInfo(token).then(res => {
         const { userInfo } = res
         commit('SET_USER', userInfo)
       })
     }
   },
-  modules: {}
+  modules: {},
+  plugins: [createLogger()]
 });

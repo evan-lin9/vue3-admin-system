@@ -51,8 +51,8 @@ export default {
       password: 123456
     });
     const onSubmit = async () => {
-      await store.dispatch('login', payload)
-      await router.push('/')
+     await store.dispatch('login', payload)
+     router.push('/')
     };
     return {
       payload,

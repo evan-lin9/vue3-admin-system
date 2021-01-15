@@ -1,20 +1,13 @@
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { createRouter, createWebHashHistory } from "vue-router";
-import Dashboard from "../views/dashboard.vue";
 import { sleep, getToken } from "@/utils";
-import generateRoutes from './routes.config'
+import generateRoutes from './route.config'
 
 export const routes = [
   {
-    path: "/",
-    name: "Dashboard",
-    component: Dashboard
-  },
-  {
-    path: "/login",
-    name: "Login",
-    component: () => import("../views/login")
+    path: '/',
+    redirect: '/dashboard'
   },
   ...generateRoutes
 ];
@@ -28,8 +21,11 @@ router.beforeEach(async (to, from, next) => {
   NProgress.start();
   if (getToken()) {
     if (to.path === '/login') {
-      next({ path: '/' })
-      NProgress.done()
+      next('/');
+      NProgress.done();
+    } else {
+      next();
+      NProgress.done();
     }
   } else {
     if (to.path === '/login') {
