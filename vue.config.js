@@ -9,5 +9,14 @@ module.exports = {
   },
   chainWebpack: config => {
     config.resolve.symlinks(true); // 修复热更新失效
-  }
+  },
+  // 插件默认值
+  // pluginOptions: {
+  //   primary: {
+  //     routeMatchPath: 'views',
+  //     fileSavePath: './src/router/route.config.js',
+  //     generateMenu: false,
+  //     excludeFolder: 'api, hooks, components, utils, services'
+  //   }
+  // }
 };

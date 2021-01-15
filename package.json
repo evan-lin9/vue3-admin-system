@@ -6,7 +6,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "dev": "vue-cli-service serve",
-    "routes": "vue-cli-service routes"
+    "primary": "vue-cli-service primary"
   },
   "dependencies": {
     "ant-design-vue": "^2.0.0-rc.5",
@@ -16,7 +16,7 @@
     "nprogress": "^0.2.0",
     "qs": "^6.9.4",
     "vue": "^3.0.0",
-    "vue-cli-plugin-primary": "../vue-cli-plugin-primary",
+    "vue-cli-plugin-primary": "^0.2.0",
     "vue-router": "^4.0.1",
     "vuex": "^4.0.0-0"
   },

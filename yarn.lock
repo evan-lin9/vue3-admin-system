@@ -9031,8 +9031,10 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-vue-cli-plugin-primary@../vue-cli-plugin-primary:
-  version "0.0.2"
+vue-cli-plugin-primary@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-primary/-/vue-cli-plugin-primary-0.2.0.tgz#303fc396c0d44dee2b35ce4158ec494438b0b075"
+  integrity sha512-YrB1Mg0deaFKpGB6LLVTazEYvKWfnplaLxHKH3+ZlN6HSO8WiR2aq3rsFo2EB6HeJSEa4BeKRfzL76ErOTWM9w==
   dependencies:
     "@babel/traverse" "7.x"
     "@vue/compiler-sfc" "3.x"

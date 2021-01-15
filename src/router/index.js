@@ -3,7 +3,7 @@ import "nprogress/nprogress.css";
 import { createRouter, createWebHashHistory } from "vue-router";
 import Dashboard from "../views/dashboard.vue";
 import { sleep, getToken } from "@/utils";
-import generateRoutes from './routes'
+import generateRoutes from './routes.config'
 
 export const routes = [
   {
