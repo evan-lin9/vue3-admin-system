@@ -1,22 +1,24 @@
 {
   "name": "vue3-admin-system",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "dev": "vue-cli-service serve",
+    "dev": "vue-cli-service serve --mode dev",
     "primary": "vue-cli-service primary"
   },
   "dependencies": {
     "ant-design-vue": "^2.0.0-rc.5",
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
+    "element-plus": "^1.0.2-beta.31",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "qs": "^6.9.4",
     "vue": "^3.0.0",
-    "vue-cli-plugin-primary": "^0.2.0",
+    "vue-cli-plugin-primary": "^0.3.1",
+    "vue-i18n": "^9.0.0-rc.4",
     "vue-router": "^4.0.1",
     "vuex": "^4.0.0-0"
   },

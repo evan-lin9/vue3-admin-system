@@ -1,14 +1,14 @@
 import { createStore, createLogger } from "vuex";
 import { login, getUserInfo } from "@/api";
-import router from '@/router'
 
 export default createStore({
   state: {
-    token: '',
+    token: sessionStorage.getItem('token') || '',
     userInfo: {},
   },
   mutations: {
     SET_TOKEN: (state, token) => {
+      sessionStorage.setItem('token', token)
       state.token = token
     },
     SET_USER: (state, data) => {

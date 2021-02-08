@@ -45,6 +45,7 @@ import router from '@/router'
 
 export default {
   name: "Login",
+  layout: null,
   setup() {
     const payload = reactive({
       username: "ygstudying@qq.com",
@@ -52,7 +53,7 @@ export default {
     });
     const onSubmit = async () => {
      await store.dispatch('login', payload)
-     router.push('/')
+      router.push('/')
     };
     return {
       payload,

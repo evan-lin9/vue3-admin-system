@@ -19,6 +19,7 @@
 import { routes } from "@/router";
 export default {
   name: "Dashboard",
+  layout: 'auth',
   data() {
     return {
       routes

@@ -5,7 +5,13 @@ module.exports = {
   devServer: {
     port,
     open: true,
-    host: "localhost" // 搞不懂一定要配置这个才可以热更新
+    host: "localhost", // 搞不懂一定要配置这个才可以热更新
+    proxy: {
+      '/api/': {
+        target: 'http://localhost:4000',
+        changeOrigin: true
+      }
+    }
   },
   chainWebpack: config => {
     config.resolve.symlinks(true); // 修复热更新失效

@@ -22,7 +22,7 @@ const codeMessage = {
 };
 
 const http = axios.create({
-  baseURL: process.env.BASE_API,
+  baseURL: '/api/v1', // process.env.BASE_API,
   timeout: 60 * 1000
 });
 
@@ -53,7 +53,7 @@ http.interceptors.response.use(
         message: codeMessage[result.code || "noCode"]
       });
     } else {
-      return result;
+      return result.data;
     }
   },
   error => {
